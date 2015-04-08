@@ -1,5 +1,56 @@
 <template name="notes">
     <!--<link href="red.css" rel="stylesheet" type="text/css" />-->
+
+
+    <script language="Javascript">
+        var i=1;
+//        function creatediv(element)
+//        {
+//            if(txtTag.value != "") {
+//                mNewObj = document.createElement('div');
+//
+//
+//                mNewObj.id = "BOX" + i;
+//                mNewObj.style.backgroundColor = "grey";
+//                mNewObj.style.visibility = "show";
+//                mNewObj.innerText = txtTag.value + i;
+//                document.getElementById("parentTag").appendChild(mNewObj);
+////                alert(mNewObj.innerText);
+//                i++;
+//
+//                txtTag.value = '';
+//            }
+//        }
+
+        function add(type){
+            var element=document.createElement("DIV");
+            element.setAttribute("type",type);
+            element.setAttribute("value",type);
+            element.setAttribute("name",type);
+            var foo=document.getElementById("childTag");
+            foo.appendChild(element);
+        }
+
+        //  below function is for remove tag onclose icon click
+        function removeElement(parentDiv, childDiv){
+            if (childDiv == parentDiv) {
+                alert("The parent div cannot be removed.");
+            }
+            else if (document.getElementById(childDiv)) {
+                var child = document.getElementById(childDiv);
+                var parent = document.getElementById(parentDiv);
+                parent.removeChild(child);
+            }
+            else {
+                alert("Child div has already been removed or does not exist.");
+                return false;
+            }
+        }
+
+
+    </script>
+
+
     <script>
         $(function() {
             $('textarea#noteDetails').editable({
@@ -28,7 +79,29 @@
         <br/>
 
         <div>
-            <a href="#" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-tag glyphiconButton"></span>Add tag</a>
+
+
+            <!--<div id="tid"></div>-->
+            <form method="post">
+                <input id="txtTag" type="text" name="element" placeholder="Write tag name" style="background-color: lightgray; width: 110px; border-radius: 10px;">
+                <input id="btn" type="button" value="Create Tag" class="btn btn-info btn-sm">
+                <!--<input id="btn" type="button" value="Create Tag" class="btn btn-info btn-sm" onclick="creatediv(element)">-->
+                <!--<input id="btn1" type="button" value="Create Tag" class="btn btn-info btn-sm">-->
+            </form>
+
+
+
+            <!--<form>-->
+
+            <!--<input type="text" name="element">-->
+
+            <!--<input type="button" class="btn btn-info btn-sm" value="Add Tag" onclick="add(element.value)">-->
+
+            <!--<span id="fooBar"> </span>-->
+
+            <!--</form>-->
+
+            <!--<a href="#" class="btn btn-info btn-sm" onclick="add(element.value)"><span class="glyphicon glyphicon-tag glyphiconButton"></span>Add tag</a>-->
         </div>
 
         <!--below code for create tag-->
@@ -36,10 +109,10 @@
         <br/>
 
         <div id="parentTag">
-        <span class="tag label label-default" ID="childTag">
-          <span>Example Tag</span>
-          <a><i class="remove glyphicon glyphicon-remove" onClick="removeElement('parentTag','childTag');"></i></a>
-        </span>
+            <span class="tag label label-default" ID="childTag">
+              <span>Example Tag</span>
+              <a><i class="remove glyphicon glyphicon-remove" onClick="removeElement('parentTag','childTag');"></i></a>
+            </span>
         </div>
 
 

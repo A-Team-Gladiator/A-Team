@@ -1,33 +1,6 @@
 <head>
 
-    <script language="javascript">
-        function add(type){
-            var element=document.createElement("input");
-            element.setAttribute("type",type);
-            element.setAttribute("value",type);
-            element.setAttribute("name",type);
-            var foo=document.getElementById("childTag");
-            foo.appendChild(element);
-        }
-    </script>
-    
-    <script>
-        //  below function is for remove tag onclose icon click
-        function removeElement(parentDiv, childDiv){
-            if (childDiv == parentDiv) {
-                alert("The parent div cannot be removed.");
-            }
-            else if (document.getElementById(childDiv)) {
-                var child = document.getElementById(childDiv);
-                var parent = document.getElementById(parentDiv);
-                parent.removeChild(child);
-            }
-            else {
-                alert("Child div has already been removed or does not exist.");
-                return false;
-            }
-        }
-    </script>
+
 
     <title>Note App</title>
 </head>
