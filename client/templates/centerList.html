@@ -1,0 +1,53 @@
+<template name="centerList">
+
+
+    <div style="height: 100%;">
+
+
+        <div class="form-group">
+            <div class="input-group">
+                <input class="form-control" name="q" type="text" placeholder="Search Notes">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-search"></i>
+                </span>
+                <div class="input-group-btn">
+                    <select class="form-control" name="category">
+
+                        <option>By Notes</option>
+                        <option>By Tag</option>
+
+                    </select>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="jumbotron" style="height: 82vh;; padding: 6px; overflow-y: scroll; margin-top: 4px;">
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <td>Note Title</td>
+                        <td>Note Details</td>
+                        <td style="text-align: end">Date</td>
+                    </tr>
+                    {{#each getNotes}}
+                        <tr>
+                            <td>{{NoteTitle}}</td>
+                            <td>{{NoteDetails}}</td>
+                            <td style="text-align: end">{{CreatedDate}}</td>
+                        </tr>
+                    {{/each}}
+                    <!--<tr>-->
+                        <!--<td>Mary</td>-->
+                        <!--<td style="text-align: end">23 Apr 2015</td>-->
+                    <!--</tr>-->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</template>
