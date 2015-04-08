@@ -1,0 +1,25 @@
+/*below code is for login page slider*/
+
+/*end code is for login page slider*/
+
+
+.navBarTemp {
+    /*background:  -moz-linear-gradient(top,#222, #333) !important;*/
+    background: -webkit-linear-gradient(top,#286090, #333) !important;
+    border-color: #222;
+}
+
+
+.leftPanelTemp{}
+
+.createButtonFooter{
+    padding: 8px;
+    margin:20px;
+}
+
+.createButton
+{
+    height: 50px;
+    width: 50px;
+    background: -webkit-linear-gradient(top,lightskyblue, #333) !important;
+}

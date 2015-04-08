@@ -1,9 +1,9 @@
 <template name="notes">
-    <link href="red.css" rel="stylesheet" type="text/css" />
+    <!--<link href="red.css" rel="stylesheet" type="text/css" />-->
     <script>
         $(function() {
             $('textarea#noteDetails').editable({
-                theme:'red',
+                theme:'royal',
                 inlineMode: false,
                 placeholder: 'Note details...',
                 colors: [
@@ -16,13 +16,19 @@
 
 
     </script>
-    <div class="jumbotron" style="padding: 20px; height: 100%;">
+    <div class="jumbotron notesJumbotron jumbotronDetails">
         <div>
 
-            <a href="#" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-tag"></span>Add tag</a>
+            <a href="#" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus glyphiconButton"></span>Create New Note</a>
 
-            <a href="#" class="btn btn-sm btn-warning pull-right"><span class="glyphicon glyphicon-share"></span>Share</a>
+            <a href="#" class="btn btn-sm btn-warning pull-right"><span class="glyphicon glyphicon-share glyphiconButton"></span>Share</a>
 
+        </div>
+
+        <br/>
+
+        <div>
+            <a href="#" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-tag glyphiconButton"></span>Add tag</a>
         </div>
 
         <!--below code for create tag-->
@@ -42,12 +48,12 @@
 
         <div>
         <span>
-            <label class="control-label" style="font-size: 12px;color: cornflowerblue;">Created:</label>
-            <label class="control-label" style="font-size: 11px; color: grey;">24 Mar 2015 11:10 AM</label>
+            <label class="control-label notesCreated">Created:</label>
+            <label class="control-label notesCreatedTime">24 Mar 2015 11:10 AM</label>
         </span>
         <span class="pull-right">
-             <label class="control-label" style="font-size: 12px; color: cornflowerblue;">Updated:</label>
-            <label class="control-label" style="font-size: 11px; color: grey;">25 Mar 2015 12:16 PM</label>
+             <label class="control-label notesUpdated" >Updated:</label>
+            <label class="control-label notesUpdatedTime">25 Mar 2015 12:16 PM</label>
         </span>
         </div>
 
@@ -59,7 +65,7 @@
 
 
 
-        <input class="form-control" id="noteTitle" type="text" placeholder="Note title">
+        <input class="form-control noteDetails" id="noteTitle" type="text" placeholder="Note title">
 
 
 
@@ -67,14 +73,16 @@
 
 
 
-        <div>
-            <textarea id="noteDetails" class="form-control custom-control" rows="15" style="overflow-y: scroll; width: 100%;"></textarea>
+        <div class="jumbotron htmlEditorJumbotron">
+            <textarea id="noteDetails" class="form-control custom-control" rows="15"></textarea>
 
             <!--<span class="input-group-addon btn btn-primary">Save</span>-->
-        </div>
-        <br/>
-        <a href="#" class="btn btn-sm btn-success btnNoteSave"><span class="glyphicon glyphicon-save"></span>Save</a>
 
+
+
+        </div>
+
+        <a href="#" class="btn btn-sm btn-success btnNoteSave"><span class="glyphicon glyphicon-save"></span>Save</a>
         <!--below code for addTag on button click-->
         <!--<form>-->
 

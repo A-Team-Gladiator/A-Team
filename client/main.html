@@ -60,6 +60,8 @@
     <div class="col-sm-5">{{> centerList}}</div>
     <div class="col-sm-5">{{> notes}}</div>
 
+    <div>{{> createNewNote}}</div>
+
 </div>
 {{else}}
     <div class="row sidebarMargin ">
@@ -67,3 +69,12 @@
     </div>
 {{/if}}
 </body>
+
+<template name="createNewNote">
+    <footer id="footer" class="animated navbar navbar-fixed-bottom createButtonFooter">
+        <button title="Create New Note" class="contain pad--both-small pull-right img-circle glyphicon glyphicon-plus createButton">
+
+            <!--<a href="#"><span class=" glyphicon glyphicon-plus img-circle" style="align-content: center;"></span></a>-->
+        </button>
+    </footer>
+</template>

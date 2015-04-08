@@ -1,0 +1,50 @@
+.jumbotronDetails{
+    height: 87vh !important;
+}
+
+.notesJumbotron {
+    padding: 20px;
+    height: 100%;
+}
+
+.notesCreated
+{
+    font-size: 12px;
+    color: cornflowerblue;
+}
+
+.notesCreatedTime
+{
+    font-size: 11px;
+    color: grey;
+}
+
+.notesUpdated
+{
+    font-size: 12px;
+    color: cornflowerblue;
+}
+
+.notesUpdatedTime
+{
+    font-size: 11px;
+    color: grey;
+}
+
+.noteDetails
+{
+    overflow-y: scroll;
+    width: 100%;
+}
+
+.htmlEditorJumbotron
+{
+    overflow-y: auto;
+    max-height: 50vh !important;
+    padding-bottom: 2px;
+}
+
+.glyphiconButton {
+    margin-right: 4px;
+}
+

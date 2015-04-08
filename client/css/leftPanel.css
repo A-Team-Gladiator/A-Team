@@ -351,11 +351,7 @@ section{
 }
 
 
-/*css for table column 2 font size*/
-td:nth-child(2)
-{
-    font-size: 11px;
-}
+
 
 /*.input-append .btn.dropdown-toggle {*/
 /*float: none;*/
@@ -370,7 +366,18 @@ td:nth-child(2)
 
 
 /*css for glyphicon and text*/
-.glyphicon {
-    margin-right: 6px;
+
+.heading
+{
+    background-color:#286090 !important;
 }
 
+.leftSideBar
+{
+    background-color:#286090;
+}
+
+.leftSideBarMenuItem
+{
+    font-size:16px !important;
+}

@@ -1,0 +1,41 @@
+.serachNotes {
+    height: 100%;
+
+}
+
+.jumbotron{
+    padding: 10px !important;
+}
+
+.noteListTable{
+    height: 82vh;
+    padding: 6px;
+    overflow-y: scroll;
+    margin-top: 4px;
+}
+
+
+
+
+/*css for table column 2 font size*/
+td:nth-child(2)
+{
+    font-size: 11px;
+}
+
+td:nth-child(3)
+{
+    font-size: 11px;
+}
+
+.deleteNotes
+{
+    color: #286090 !important;
+    padding-top: 9px;
+
+}
+
+.addNote
+{
+    margin-bottom: 3px !important;
+}
