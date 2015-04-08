@@ -35,10 +35,11 @@
                     <!--</tr>-->
                     {{#each getNotes}}
                         <tr>
-                            <a href="#"><span class="glyphicon glyphicon-remove-circle deleteNotes" alt="Delete this Note"></span></a>
+
                             <td>{{NoteTitle}}</td>
                             <!--<td>{{NoteDetails}}</td>-->
                             <td style="text-align: end">{{CreatedDate}}</td>
+                            <a href="#"><span class="glyphicon glyphicon-remove-circle deleteNotes" alt="Delete this Note" TITLE="Delete this Note"></span></a>
                         </tr>
                     {{/each}}
                     <!--<tr>-->
