@@ -2,11 +2,11 @@
  * Created by SOHEB.RAPATI on 09-04-2015.
  */
 
-Meteor.subscribe('noteList');
+
 
 Template.centerList.helpers({
     getNotes: function () {
-        var currentUserId = Meteor.userId();
+        //var currentUserId = Meteor.userId();
         return noteList.find({}, {sort: {NoteTitle: 1}});
     },
 
@@ -42,5 +42,7 @@ Template.centerList.events({
         $('textarea#noteDetails').editable("setHTML", note.NoteDetails, false);
         Session.set('noteMode','editNote');
         Session.set('noteId', noteId);
+        $('textarea#noteDetails').editable("focus");
+        $('#noteTitle').focus();
     }
 });

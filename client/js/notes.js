@@ -5,14 +5,12 @@
 Session.setDefault('noteMode','addNote');
 Session.setDefault('noteId', '');
 
+Meteor.subscribe('noteList');
 
 Template.notes.events({
     'click .btnSaveNote': function () {
         var nTit = $('#noteTitle')[0].value;
         var nDet = $('textarea#noteDetails').editable("getHTML", true, true); //$('#noteDetails')[0].value;
-
-        var me = this;
-
         Meteor.call('addNote', Session.get('noteMode'), Session.get('noteId'), nTit, nDet, function (error, response) {
             if (error) {
                 console.log('ERROR :', error);
@@ -31,5 +29,12 @@ Template.notes.events({
         $('textarea#noteDetails').editable("setHTML", "", false);
         Session.set('noteMode','addNote');
         Session.set('noteId', '');
+        $('#noteTitle').focus();
+    },
+
+    'click .btnSaveTag': function () {
+        var tagName = $('#txtTag')[0].value;
     }
+
+
 });
