@@ -1,63 +1,53 @@
 <template name="centerList">
 
 
-    <div id="test" class="jumbotron container-fluid" style="min-height: 70%; height: 70%">
+
+    <div id="test" class="jumbotron container-fluid">
         <div class="row">
             <div class="col-sm-12">
 
 
-    <div class="serachNotes">
+                <div class="serachNotes">
 
 
-        <div class="form-group">
-            <div class="input-group">
-                <input class="form-control" name="q" type="text" placeholder="Search Notes">
-                <span class="input-group-addon">
-                    <i class="glyphicon glyphicon-search"></i>
-                </span>
 
-                <div class="input-group-btn">
-                    <select class="form-control" name="category">
+                    <div class="input-group" >
+                        <input class="form-control" name="q" type="text" placeholder="Search Notes">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </span>
 
-                        <option>By Notes</option>
-                        <option>By Tag</option>
+                        <div class="input-group btn-info">
+                            <select class="form-control">
+                                <option value="By Tag">By Tag</option>
+                                <option value="By Notes" selected>By Notes</option>
+                            </select>
+                        </div>
+                    </div>
 
-                    </select>
+
+
+                    <div class="jumbotron noteListTable">
+                        <table class="table table-hover">
+                            <tbody>
+
+                                {{#each getNotes}}
+                                    <tr>
+                                        <a href="#"><span class="glyphicon glyphicon-edit editNote" alt="Delete this Note" TITLE="Edit this Note"></span></a>
+
+                                        <td>{{NoteTitle}}</td>
+                                        <!--<td>{{NoteDetails}}</td>-->
+                                        <td style="text-align: end">{{CreatedDate}}</td>
+
+                                        <a href="#"><span class="glyphicon glyphicon-remove-circle deleteNote pull-right" alt="Delete this Note" TITLE="Delete this Note"></span></a>
+                                    </tr>
+                                {{/each}}
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-
-            </div>
-        </div>
-
-
-        <div class="jumbotron noteListTable">
-            <table class="table table-hover">
-                <tbody>
-                    <!--<tr>-->
-                        <!--<td>Note Title</td>-->
-                        <!--&lt;!&ndash;<td>Note Details</td>&ndash;&gt;-->
-                        <!--<td style="text-align: end">Date</td>-->
-                    <!--</tr>-->
-                    {{#each getNotes}}
-                        <tr>
-                            <a href="#"><span class="glyphicon glyphicon-edit editNote" alt="Delete this Note" TITLE="Edit this Note"></span></a>
-
-                            <td>{{NoteTitle}}</td>
-                            <!--<td>{{NoteDetails}}</td>-->
-                            <td style="text-align: end">{{CreatedDate}}</td>
-
-                            <a href="#"><span class="glyphicon glyphicon-remove-circle deleteNote pull-right" alt="Delete this Note" TITLE="Delete this Note"></span></a>
-                        </tr>
-                    {{/each}}
-                    <!--<tr>-->
-                        <!--<td>Mary</td>-->
-                        <!--<td style="text-align: end">23 Apr 2015</td>-->
-                    <!--</tr>-->
-                </tbody>
-            </table>
+             </div>
         </div>
     </div>
-
-
-
-            </div></div></div>
 </template>
