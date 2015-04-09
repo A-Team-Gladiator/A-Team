@@ -12,6 +12,7 @@
                 <span class="input-group-addon">
                     <i class="glyphicon glyphicon-search"></i>
                 </span>
+
                 <div class="input-group-btn">
                     <select class="form-control" name="category">
 
@@ -35,11 +36,13 @@
                     <!--</tr>-->
                     {{#each getNotes}}
                         <tr>
+                            <a href="#"><span class="glyphicon glyphicon-edit editNote" alt="Delete this Note" TITLE="Edit this Note"></span></a>
+
                             <td>{{NoteTitle}}</td>
                             <!--<td>{{NoteDetails}}</td>-->
                             <td style="text-align: end">{{CreatedDate}}</td>
-                            <a href="#"><span class="glyphicon glyphicon-remove-circle deleteNote" alt="Delete this Note" TITLE="Delete this Note"></span></a>
-                            <a href="#"><span class="glyphicon glyphicon-remove-circle editNote" alt="Delete this Note" TITLE="Delete this Note"></span></a>
+
+                            <a href="#"><span class="glyphicon glyphicon-remove-circle deleteNote pull-right" alt="Delete this Note" TITLE="Delete this Note"></span></a>
                         </tr>
                     {{/each}}
                     <!--<tr>-->

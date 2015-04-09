@@ -2,6 +2,8 @@
     <!--<link href="red.css" rel="stylesheet" type="text/css" />-->
 
 
+    <script src="/client/js/file_upload.min.js" ></script>
+
     <script language="Javascript">
         var i=1;
 //        function creatediv(element)
@@ -52,6 +54,10 @@
 
 
     <script>
+
+
+
+
         $(function() {
             $('textarea#noteDetails').editable({
                 theme:'royal',
@@ -60,14 +66,23 @@
                 colors: [
                     '#15E67F', '#E3DE8C', '#D8A076', '#D83762', '#76B6D8', 'REMOVE',
                     '#1C7A90', '#249CB8', '#4ABED9', '#FBD75B', '#FBE571', '#FFFFFF'
-                ]
+                ],
+                minHeight: 100,
+                maxHeight: 350,
+                showFileUpload: true
             })
+
+
+
+
 
         });
 
 
     </script>
+
     <div class="jumbotron notesJumbotron jumbotronDetails">
+
         <div>
 
             <a href="#" class="btn btn-default btn-sm btnCreateNote"><span class="glyphicon glyphicon-plus glyphiconButton"></span>Create Note</a>
@@ -83,7 +98,7 @@
 
             <!--<div id="tid"></div>-->
             <form method="post">
-                <input id="txtTag" type="text" name="element" placeholder="Write tag name" style="background-color: lightgray; width: 110px; border-radius: 10px;">
+                <input id="txtTag" type="text" name="element" placeholder="Write tag name" class="tagText">
                 <input id="btn" type="button" value="Create Tag" class="btn btn-info btn-sm">
                 <!--<input id="btn" type="button" value="Create Tag" class="btn btn-info btn-sm" onclick="creatediv(element)">-->
                 <!--<input id="btn1" type="button" value="Create Tag" class="btn btn-info btn-sm">-->
@@ -119,6 +134,8 @@
 
         <hr/>
 
+        <div class="jumbotron" style="overflow-y: auto;">
+
         <div>
         <span>
             <label class="control-label notesCreated">Created:</label>
@@ -151,11 +168,11 @@
 
             <!--<span class="input-group-addon btn btn-primary">Save</span>-->
 
-
+            <br/>
 
         </div>
-
-        <a href="#" class="btn btn-sm btn-success btnSaveNote"><span class="glyphicon glyphicon-save"></span>Save</a>
+            <a href="#" class="btn btn-sm btn-success btnSaveNote"><span class="glyphicon glyphicon-save"></span>Save</a>
+        </div>
         <!--below code for addTag on button click-->
         <!--<form>-->
 
