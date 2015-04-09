@@ -15,8 +15,9 @@ border-color: #222;
 .leftPanelTemp{}
 
 .createButtonFooter{
-    padding: 8px;
+    padding: 0px;
     margin:20px;
+    width: 44px;
 }
 
 .createButton
