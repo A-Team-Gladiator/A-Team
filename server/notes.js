@@ -8,9 +8,9 @@ Meteor.publish('noteList', function(){
 });
 
 Meteor.methods({
-    'addNotes': function( type, noteTitle, noteDetails ){
+    'addNote': function( type, noteId, noteTitle, noteDetails ){
         var currentUserId = Meteor.userId();
-        if(type == 'add') {
+        if(type == 'addNote') {
             noteList.insert({
                 NoteTitle: noteTitle,
                 NoteDetails: noteDetails,
@@ -19,14 +19,14 @@ Meteor.methods({
                 LastUpdated: new Date()
             });
         }else{
-            //PlayersList.update(selectedPlayer, {$set: {
-            //    NoteTitle: noteTitle, NoteDetails: noteDetails, LastUpdated: new Date()}
-            //});
+            noteList.update(noteId, {$set: {
+                NoteTitle: noteTitle, NoteDetails: noteDetails, LastUpdated: new Date()}
+            });
         }
     },
 
-    'removePlayer': function (selectedPlayer) {
-        PlayersList.remove(selectedPlayer);
+    'removeNote': function (noteId) {
+        noteList.remove(noteId);
     },
 
     'modifyScore': function(selectedPlayer, score){

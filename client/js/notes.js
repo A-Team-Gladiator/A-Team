@@ -2,18 +2,34 @@
  * Created by SOHEB.RAPATI on 08-04-2015.
  */
 
-Meteor.subscribe('noteList');
+Session.setDefault('noteMode','addNote');
+Session.setDefault('noteId', '');
 
-Template.centerList.helpers({
-    getNotes: function () {
-        var currentUserId = Meteor.userId();
-        return noteList.find({}, {sort: {NoteTitle: 1}});
-    }
-});
 
 Template.notes.events({
-    'click .btnNoteSave': function () {
-        //var me=this;
-        Meteor.call('addNotes', 'add', $('#noteTitle')[0].value, $('#noteDetails')[0].value);
+    'click .btnSaveNote': function () {
+        var nTit = $('#noteTitle')[0].value;
+        var nDet = $('textarea#noteDetails').editable("getHTML", true, true); //$('#noteDetails')[0].value;
+
+        var me = this;
+
+        Meteor.call('addNote', Session.get('noteMode'), Session.get('noteId'), nTit, nDet, function (error, response) {
+            if (error) {
+                console.log('ERROR :', error);
+            } else {
+                console.log('response:', response);
+            }
+            $('#noteTitle')[0].value = "";
+            $('textarea#noteDetails').editable("setHTML", "", false);
+            Session.set('noteMode','addNote');
+            Session.set('noteId', '');
+        });
+    },
+
+    'click .btnCreateNote': function(){
+        $('#noteTitle')[0].value = "";
+        $('textarea#noteDetails').editable("setHTML", "", false);
+        Session.set('noteMode','addNote');
+        Session.set('noteId', '');
     }
 });
