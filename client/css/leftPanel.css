@@ -29,7 +29,9 @@ body{
 .heading
 {
     background: -webkit-linear-gradient(top,#286090, #333) !important;
+    /*background: -webkit-linear-gradient(top,#d24b5a, #8f0222)!important;*/
 }
+
 /*!
  * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.

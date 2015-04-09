@@ -6,7 +6,9 @@
 .navBarTemp {
     /*background:  -moz-linear-gradient(top,#222, #333) !important;*/
     background: -webkit-linear-gradient(top,#286090, #333) !important;
-    border-color: #222;
+
+    /*background: -webkit-linear-gradient(top,#d24b5a, #8f0222)!important;*/
+border-color: #222;
 }
 
 
