@@ -68,7 +68,7 @@
                     '#1C7A90', '#249CB8', '#4ABED9', '#FBD75B', '#FBE571', '#FFFFFF'
                 ],
                 minHeight: 100,
-                maxHeight: 350,
+                maxHeight: 220,
                 showFileUpload: true
             })
 
@@ -81,109 +81,108 @@
 
     </script>
 
-    <div class="jumbotron notesJumbotron jumbotronDetails">
-
-        <div>
-
-            <a href="#" class="btn btn-default btn-sm btnCreateNote"><span class="glyphicon glyphicon-plus glyphiconButton"></span>Create Note</a>
-
-            <a href="#" class="btn btn-sm btn-warning pull-right"><span class="glyphicon glyphicon-share glyphiconButton"></span>Share</a>
-
-        </div>
-
-        <br/>
-
-        <div>
+<!--test code of grid id test-->
+    <div id="test" class="jumbotron container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
 
 
-            <!--<div id="tid"></div>-->
-            <form method="post">
+
+                <div>
+
+                <a href="#" class="btn btn-default btn-sm btnCreateNote"><span class="glyphicon glyphicon-plus glyphiconButton"></span>Create Note</a>
+
+                <a href="#" class="btn btn-sm btn-warning pull-right"><span class="glyphicon glyphicon-share glyphiconButton"></span>Share</a>
+
+                </div>
+
+                <br/>
+
+                <div>
+
+
+                <!--<div id="tid"></div>-->
+                <form method="post">
                 <input id="txtTag" type="text" name="element" placeholder="Write tag name" class="tagText">
                 <input id="btn" type="button" value="Create Tag" class="btn btn-info btn-sm">
                 <!--<input id="btn" type="button" value="Create Tag" class="btn btn-info btn-sm" onclick="creatediv(element)">-->
                 <!--<input id="btn1" type="button" value="Create Tag" class="btn btn-info btn-sm">-->
-            </form>
+                </form>
 
 
 
-            <!--<form>-->
+                <!--<form>-->
 
-            <!--<input type="text" name="element">-->
+                <!--<input type="text" name="element">-->
 
-            <!--<input type="button" class="btn btn-info btn-sm" value="Add Tag" onclick="add(element.value)">-->
+                <!--<input type="button" class="btn btn-info btn-sm" value="Add Tag" onclick="add(element.value)">-->
 
-            <!--<span id="fooBar"> </span>-->
+                <!--<span id="fooBar"> </span>-->
 
-            <!--</form>-->
+                <!--</form>-->
 
-            <!--<a href="#" class="btn btn-info btn-sm" onclick="add(element.value)"><span class="glyphicon glyphicon-tag glyphiconButton"></span>Add tag</a>-->
+                <!--<a href="#" class="btn btn-info btn-sm" onclick="add(element.value)"><span class="glyphicon glyphicon-tag glyphiconButton"></span>Add tag</a>-->
+                </div>
+
+                <!--below code for create tag-->
+
+                <br/>
+
+                <div id="parentTag">
+                <span class="tag label label-default" ID="childTag">
+                <span>Example Tag</span>
+                <a><i class="remove glyphicon glyphicon-remove" onClick="removeElement('parentTag','childTag');"></i></a>
+                </span>
+                </div>
+
+
+
+                <hr/>
+
+                <div class="jumbotron" style="overflow-y: auto;">
+
+                <div>
+                <span>
+                <label class="control-label notesCreated">Created:</label>
+                <label class="control-label notesCreatedTime">24 Mar 2015 11:10 AM</label>
+                </span>
+                <span class="pull-right">
+                <label class="control-label notesUpdated" >Updated:</label>
+                <label class="control-label notesUpdatedTime">25 Mar 2015 12:16 PM</label>
+                </span>
+                </div>
+
+
+
+
+
+                <!--code for textEditor-->
+
+
+
+                <input class="form-control noteDetails" id="noteTitle" type="text" placeholder="Note title">
+
+
+
+                <br/>
+
+
+
+                <!--<div class="jumbotron htmlEditorJumbotron">-->
+                <textarea id="noteDetails" class="form-control custom-control htmlEditorJumbotron" rows="15"></textarea>
+
+                <br/>
+
+                <!--</div>-->
+                <a href="#" class="btn btn-sm btn-success btnSaveNote"><span class="glyphicon glyphicon-save"></span>Save</a>
+                </div>
+
+
+            </div>
         </div>
-
-        <!--below code for create tag-->
-
-        <br/>
-
-        <div id="parentTag">
-            <span class="tag label label-default" ID="childTag">
-              <span>Example Tag</span>
-              <a><i class="remove glyphicon glyphicon-remove" onClick="removeElement('parentTag','childTag');"></i></a>
-            </span>
-        </div>
-
-
-
-        <hr/>
-
-        <div class="jumbotron" style="overflow-y: auto;">
-
-        <div>
-        <span>
-            <label class="control-label notesCreated">Created:</label>
-            <label class="control-label notesCreatedTime">24 Mar 2015 11:10 AM</label>
-        </span>
-        <span class="pull-right">
-             <label class="control-label notesUpdated" >Updated:</label>
-            <label class="control-label notesUpdatedTime">25 Mar 2015 12:16 PM</label>
-        </span>
-        </div>
-
-
-
-
-
-        <!--code for textEditor-->
-
-
-
-        <input class="form-control noteDetails" id="noteTitle" type="text" placeholder="Note title">
-
-
-
-        <br/>
-
-
-
-        <div class="jumbotron htmlEditorJumbotron">
-            <textarea id="noteDetails" class="form-control custom-control" rows="15"></textarea>
-
-            <!--<span class="input-group-addon btn btn-primary">Save</span>-->
-
-            <br/>
-
-        </div>
-            <a href="#" class="btn btn-sm btn-success btnSaveNote"><span class="glyphicon glyphicon-save"></span>Save</a>
-        </div>
-        <!--below code for addTag on button click-->
-        <!--<form>-->
-
-        <!--<input type="text" name="element">-->
-
-        <!--<input type="button" value="Add" onclick="add(element.value)">-->
-
-        <!--<span id="fooBar"> </span>-->
-
-        <!--</form>-->
-
     </div>
+
+
+
 
 </template>
