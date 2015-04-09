@@ -30,19 +30,26 @@
                     <div class="jumbotron noteListTable">
                         <table class="table table-hover">
                             <tbody>
+                                {{#if getNotes.count}}
+                                    {{#each getNotes}}
+                                        <tr>
+                                            <a href="#"><span class="glyphicon glyphicon-edit editNote" alt="Delete this Note" TITLE="Edit this Note"></span></a>
 
-                                {{#each getNotes}}
+                                            <td>{{NoteTitle}}</td>
+                                            <!--<td>{{NoteDetails}}</td>-->
+                                            <td style="text-align: end">{{CreatedDate}}</td>
+
+                                            <a href="#"><span class="glyphicon glyphicon-remove-circle deleteNote pull-right" alt="Delete this Note" TITLE="Delete this Note"></span></a>
+                                        </tr>
+                                    {{/each}}
+                                {{else}}
                                     <tr>
-                                        <a href="#"><span class="glyphicon glyphicon-edit editNote" alt="Delete this Note" TITLE="Edit this Note"></span></a>
+                                        <td style="text-align: center;">
+                                            No Notes Exits.
+                                        </td>
 
-                                        <td>{{NoteTitle}}</td>
-                                        <!--<td>{{NoteDetails}}</td>-->
-                                        <td style="text-align: end">{{CreatedDate}}</td>
-
-                                        <a href="#"><span class="glyphicon glyphicon-remove-circle deleteNote pull-right" alt="Delete this Note" TITLE="Delete this Note"></span></a>
                                     </tr>
-                                {{/each}}
-
+                                {{/if}}
                             </tbody>
                         </table>
                     </div>
