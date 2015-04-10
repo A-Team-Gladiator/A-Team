@@ -1,0 +1,42 @@
+<template name="tags">
+<div>
+
+
+    <!--<div id="tid"></div>-->
+    <form method="post">
+        <input id="txtTag" type="text" name="tagName" placeholder="Write tag name" class="tagText">
+        <input id="btnSaveTag" type="submit" value="Create Tag" class="btn btn-info btn-sm btnSaveTag">
+        <!--<input id="btn" type="button" value="Create Tag" class="btn btn-info btn-sm" onclick="creatediv(element)">-->
+        <!--<input id="btn1" type="button" value="Create Tag" class="btn btn-info btn-sm">-->
+    </form>
+
+
+
+    <!--<form>-->
+
+    <!--<input type="text" name="element">-->
+
+    <!--<input type="button" class="btn btn-info btn-sm" value="Add Tag" onclick="add(element.value)">-->
+
+    <!--<span id="fooBar"> </span>-->
+
+    <!--</form>-->
+
+    <!--<a href="#" class="btn btn-info btn-sm" onclick="add(element.value)"><span class="glyphicon glyphicon-tag glyphiconButton"></span>Add tag</a>-->
+</div>
+
+
+<!--below code for create tag-->
+
+<br/>
+
+<div id="parentTag">
+    {{#each getTags}}
+        <span class="label label-success tagDiv" ID="childTag">
+           {{TagName}}
+                <a><i class="remove glyphicon glyphicon-remove" onClick="removeElement('parentTag','childTag');"></i></a>
+        </span>
+    {{/each}}
+</div>
+
+</template>

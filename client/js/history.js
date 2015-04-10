@@ -1,30 +1,30 @@
 /**
  * Created by sumit on 4/9/2015.
  */
-var Status = {
+Status = {
     Insert: "Inserted",
     Update: "Updated",
     Delete: "deleted"
 
 };
-var Type = {
+ Type = {
     Note: "Note",
     Tag: "Tag",
     Group: "Group",
     Share: "Share"
 
 };
-var clsHistory = function () {
+ clsHistory = function () {
     historyDataId: null;
     this.historyDetails = null;
     this.changedby = "";
     this.changedate = "";
     this.status = "";
 }
+Meteor.subscribe('historyList');
 
-Template.history.helpers({
 
-    createHistoryForNote:function(noteId,status,title,noteDetails){
+clsHistory.prototype.createHistoryForNote=function(noteId,status,title,noteDetails){
         var userId = Meteor.userId();
         var objHistoryData = new clsHistory();
 
@@ -54,8 +54,8 @@ Template.history.helpers({
             objHistoryData.historyDetails.reason=title;
         }
         Meteor.call('addHistory', noteId , objHistoryData);
-    },
-    createHistoryForTag:function(noteId,tagId,status,tagName,details){
+    }
+clsHistory.prototype.createHistoryForTag=function(noteId,tagId,status,tagName,details){
         var userId = Meteor.userId();
         var objHistoryData = new clsHistory();
 
@@ -85,8 +85,8 @@ Template.history.helpers({
             objHistoryData.historyDetails.reason=details;
         }
         Meteor.call('addHistory', noteId , objHistoryData);
-    },
-    createHistoryForShare:function(noteId,shareId,status,shareWith){
+    }
+clsHistory.prototype.createHistoryForShare=function(noteId,shareId,status,shareWith){
         var userId = Meteor.userId();
         var objHistoryData = new clsHistory();
 
@@ -112,8 +112,8 @@ Template.history.helpers({
             objHistoryData.historyDetails.reason=details;
         }
         Meteor.call('addHistory', noteId , objHistoryData);
-    },
-    createHistoryForGroup:function(status,groupId,groupName,groupDescription){
+    }
+clsHistory.prototype.createHistoryForGroup=function(status,groupId,groupName,groupDescription){
         var userId = Meteor.userId();
         var objHistoryData = new clsHistory();
 
@@ -145,4 +145,3 @@ Template.history.helpers({
 
     }
 
-})

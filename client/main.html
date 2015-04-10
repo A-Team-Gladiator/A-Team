@@ -3,9 +3,11 @@
     <script src="/client/js/file_upload.min.js"></script>
 
     <title>Note App</title>
+
 </head>
 
 <body>
+
 <div class="navbar navbar-inverse navBarTemp"  role="navigation">
 
     <div class="navbar-header">
@@ -26,21 +28,23 @@
         </ul>
     </div>
 </div>
+
 {{#if currentUser}}
-<div class="container-fluid" style="margin-bottom: 24px;">
+    <div class="container-fluid">
 
-    <div class="col-sm-2"> {{> leftPanel}}</div>
-    <div class="col-sm-5">{{> centerList}}</div>
-    <div class="col-sm-5">{{> notes}}</div>
+        <div class="col-sm-2"> {{> leftPanel}}</div>
+        <div class="col-sm-5">{{> centerList}}</div>
+        <div class="col-sm-5">{{> notes}}</div>
 
-    <div>{{> createNewNote}}</div>
+        <div>{{> createNewNote}}</div>
 
-</div>
+    </div>
 {{else}}
     <div class="row sidebarMargin ">
       <div class="col-sm-12">{{>imageSlider}}</div>
     </div>
 {{/if}}
+
 </body>
 
 <template name="createNewNote">

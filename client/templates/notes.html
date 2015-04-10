@@ -52,7 +52,6 @@
 
     </script>
 
-
     <script>
 
 
@@ -85,55 +84,19 @@
     <div id="test" class="jumbotron container-fluid">
         <div class="row">
             <div class="col-sm-12">
-
-
-
                 <div>
 
-                <a href="#" class="btn btn-default btn-sm btnCreateNote"><span class="glyphicon glyphicon-plus glyphiconButton"></span>Create Note</a>
+                    <a href="#" class="btn btn-default btn-sm btnCreateNote"><span class="glyphicon glyphicon-plus glyphiconButton"></span>Create Note</a>
 
-                <a href="#" class="btn btn-sm btn-warning pull-right"><span class="glyphicon glyphicon-share glyphiconButton"></span>Share</a>
+                    <a href="#" class="btn btn-sm btn-warning pull-right"><span class="glyphicon glyphicon-share glyphiconButton"></span>Share</a>
 
                 </div>
 
                 <br/>
 
-                <div>
 
 
-                <!--<div id="tid"></div>-->
-                <form method="post">
-                <input id="txtTag" type="text" name="element" placeholder="Write tag name" class="tagText">
-                <input id="btn" type="button" value="Create Tag" class="btn btn-info btn-sm">
-                <!--<input id="btn" type="button" value="Create Tag" class="btn btn-info btn-sm" onclick="creatediv(element)">-->
-                <!--<input id="btn1" type="button" value="Create Tag" class="btn btn-info btn-sm">-->
-                </form>
-
-
-
-                <!--<form>-->
-
-                <!--<input type="text" name="element">-->
-
-                <!--<input type="button" class="btn btn-info btn-sm" value="Add Tag" onclick="add(element.value)">-->
-
-                <!--<span id="fooBar"> </span>-->
-
-                <!--</form>-->
-
-                <!--<a href="#" class="btn btn-info btn-sm" onclick="add(element.value)"><span class="glyphicon glyphicon-tag glyphiconButton"></span>Add tag</a>-->
-                </div>
-
-                <!--below code for create tag-->
-
-                <br/>
-
-                <div id="parentTag">
-                <span class="tag label label-default" ID="childTag">
-                <span>Example Tag</span>
-                <a><i class="remove glyphicon glyphicon-remove" onClick="removeElement('parentTag','childTag');"></i></a>
-                </span>
-                </div>
+                {{> tags}}
 
 
 
