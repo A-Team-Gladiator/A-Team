@@ -1,0 +1,69 @@
+<head>
+
+    <title>Note App</title>
+
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navBarTemp"  role="navigation">
+
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">Note App</a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="#"><span class="teamName">by Gladiators!</span></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          {{> loginButtons}}  <!--here -->
+        </ul>
+    </div>
+</div>
+
+
+{{#if currentUser}}
+    <div class="container-fluid">
+
+        <div class="col-sm-2"> {{> leftPanel}}</div>
+        <div class="col-sm-5">{{> centerList}}</div>
+        <div class="col-sm-5">{{> notes}}</div>
+
+        <div>{{> createNewNote}}</div>
+
+    </div>
+{{else}}
+    <div class="row sidebarMargin ">
+      <div class="col-sm-12">{{>imageSlider}}</div>
+    </div>
+{{/if}}
+
+</body>
+
+
+<template name="createNewNote">
+    <footer id="footer" class="animated navbar navbar-fixed-bottom createButtonFooter">
+        <button title="Create Note" class="contain pad--both-small pull-right img-circle glyphicon glyphicon-plus createButton btnCreateNote">
+
+            <!--<a href="#"><span class=" glyphicon glyphicon-plus img-circle" style="align-content: center;"></span></a>-->
+        </button>
+    </footer>
+
+
+</template>
+
+<template name="NoteList">
+
+        <div class="col-sm-5">{{> centerList}}</div>
+        <div class="col-sm-5">{{> notes}}</div>
+
+</template>
+
+
+
