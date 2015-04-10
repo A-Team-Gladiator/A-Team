@@ -14,4 +14,6 @@ Router.map(function(){
 
     this.route('help', {path:'/help'});
 
+    this.route('tagList', {path:'/tagList'});
+
 });

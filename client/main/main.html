@@ -28,7 +28,7 @@
                 <!--<div class="col-sm-5">{{> centerList}}</div>-->
                 <!--<div class="col-sm-5">{{> notes}}</div>-->
                 <div class="col-sm-10">{{> yield}}</div>
-                <div>{{> createNewNote}}</div>
+                <!--<div>{{> createNewNote}}</div>-->
 
             </div>
         {{else}}
@@ -39,20 +39,20 @@
 
 </template>
 
-<template name="createNewNote">
-    <footer id="footer" class="animated navbar navbar-fixed-bottom createButtonFooter">
-        <button title="Create Note" class="contain pad--both-small pull-right img-circle glyphicon glyphicon-plus createButton btnCreateNote">
+<!--<template name="createNewNote">-->
+    <!--<footer id="footer" class="animated navbar navbar-fixed-bottom createButtonFooter">-->
+        <!--<button title="Create Note" class="contain pad--both-small pull-right img-circle glyphicon glyphicon-plus createButton btnCreateNote">-->
 
-            <!--<a href="#"><span class=" glyphicon glyphicon-plus img-circle" style="align-content: center;"></span></a>-->
-        </button>
-    </footer>
+            <!--&lt;!&ndash;<a href="#"><span class=" glyphicon glyphicon-plus img-circle" style="align-content: center;"></span></a>&ndash;&gt;-->
+        <!--</button>-->
+    <!--</footer>-->
 
 
-</template>
+<!--</template>-->
 
 <template name="NoteList">
 
-    <div class="col-sm-6">{{> centerList}}</div>
-    <div class="col-sm-6">{{> notes}}</div>
+    <div class="col-sm-7">{{> centerList}}</div>
+    <div class="col-sm-5">{{> notes}}</div>
 
 </template>

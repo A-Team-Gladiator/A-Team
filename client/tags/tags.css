@@ -7,5 +7,11 @@
 }
 
 .parentTag {
-    margin-top: 22px;
+    margin-top: 3px;
+    margin-left: 7px;
+}
+
+.tagMargin{
+    margin-top: -20px;
+    margin-left: -4px;
 }

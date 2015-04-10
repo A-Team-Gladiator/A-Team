@@ -55,12 +55,12 @@
 
 .btnSaveNote {
     margin-top: -7px;
-    float: right;
+    float: left;
 }
 
 .btnClearNote {
     margin-top: -7px;
-    float: left;
+    float: right;
 }
 
 
