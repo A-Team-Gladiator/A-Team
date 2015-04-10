@@ -33,9 +33,9 @@
     <div class="container-fluid">
 
         <div class="col-sm-2"> {{> leftPanel}}</div>
-        <div class="col-sm-5">{{> centerList}}</div>
-        <div class="col-sm-5">{{> notes}}</div>
-
+        <!--<div class="col-sm-5">{{> centerList}}</div>-->
+        <!--<div class="col-sm-5">{{> notes}}</div>-->
+        {{> NoteList}}
         <div>{{> createNewNote}}</div>
 
     </div>
@@ -55,5 +55,12 @@
         </button>
     </footer>
 
+
+</template>
+
+<template name="NoteList">
+
+        <div class="col-sm-5">{{> centerList}}</div>
+        <div class="col-sm-5">{{> notes}}</div>
 
 </template>
