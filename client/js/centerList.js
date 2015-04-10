@@ -29,6 +29,8 @@ Template.centerList.events({
                     console.log('ERROR :', error);
                 } else {
                     var objHistory= new clsHistory();
+
+                    //add History  for delete
                     objHistory.createHistoryForNote(noteId,Status.Delete, nTit)
                     console.log('response:', response);
                 }

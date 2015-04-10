@@ -18,6 +18,8 @@ Template.notes.events({
                 console.log('ERROR :', error);
             } else {
                 console.log('response:', response);
+
+                //add History  for Update if NoteId exist in session else create history for insert
                 if(Session.get('noteId')!="")
                 {
                     objHistory.createHistoryForNote(Session.get('noteId'),Status.Update, nTit, nDet)
