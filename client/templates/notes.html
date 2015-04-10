@@ -1,6 +1,31 @@
 <template name="notes">
     <!--<link href="red.css" rel="stylesheet" type="text/css" />-->
 
+    <!--//below script is for share drpdwn-->
+    <script>
+        var options = [];
+
+        $( '.dropdown-menu a' ).on( 'click', function( event ) {
+
+            var $target = $( event.currentTarget ),
+                    val = $target.attr( 'data-value' ),
+                    $inp = $target.find( 'input' ),
+                    idx;
+
+            if ( ( idx = options.indexOf( val ) ) > -1 ) {
+                options.splice( idx, 1 );
+                setTimeout( function() { $inp.prop( 'checked', false ) }, 0);
+            } else {
+                options.push( val );
+                setTimeout( function() { $inp.prop( 'checked', true ) }, 0);
+            }
+
+            $( event.target ).blur();
+
+            console.log( options );
+            return false;
+        });
+    </script>
 
     <script src="/client/js/file_upload.min.js" ></script>
 
@@ -84,11 +109,32 @@
     <div id="test" class="jumbotron container-fluid">
         <div class="row">
             <div class="col-sm-12">
+
                 <div>
 
                     <a href="#" class="btn btn-default btn-sm btnCreateNote"><span class="glyphicon glyphicon-plus glyphiconButton"></span>Create Note</a>
 
-                    <a href="#" class="btn btn-sm btn-warning pull-right"><span class="glyphicon glyphicon-share glyphiconButton"></span>Share</a>
+                    <!--<a href="#" class="btn btn-sm btn-warning pull-right"><span class="glyphicon glyphicon-share glyphiconButton"></span>Share</a>-->
+
+
+
+                    <div class="btn-group pull-right">
+                        <button class="btn btn-primary" data-label-placement>Share</button>
+                        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span></button>
+                        <ul class="dropdown-menu" style="max-height: 100px; overflow-y: auto;">
+                            <!--<li><input type="checkbox" id="ID" name="NAME" value="VALUE"><label for="ID">Label</label></li>-->
+
+                            <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>
+                            <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>
+                            <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>
+                            <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>
+                            <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>
+                            <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>
+
+                            <!-- Other items -->
+                        </ul>
+                    </div>
+
 
                 </div>
 
