@@ -27,7 +27,7 @@ Accounts.ui.config({
 
 accountsUIBootstrap3.logoutCallback = function(error) {
     //if(error) console.log("Error:" + error);
-    Router.go('home');
+    Router.go('imageSlider');
     Session.set('selectedPlayer','');
 
 }
