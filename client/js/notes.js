@@ -68,6 +68,4 @@ Template.notes.events({
     'click .btnSaveTag': function () {
         var tagName = $('#txtTag')[0].value;
     }
-
-
 });
