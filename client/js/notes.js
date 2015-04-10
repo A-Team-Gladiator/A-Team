@@ -24,28 +24,6 @@ Template.notes.events({
 
         var nTit = $('#noteTitle')[0].value;
         var nDet = $('textarea#noteDetails').editable("getHTML", true, true); //$('#noteDetails')[0].value;
-<<<<<<< HEAD
-=======
-        Meteor.call('addNote', Session.get('noteMode'), Session.get('noteId'), nTit, nDet, function (error, response) {
-            if (error) {
-                console.log('ERROR :', error);
-            } else {
-                console.log('response:', response);
-
-                //add History  for Update if NoteId exist in session else create history for insert
-                if(Session.get('noteId')!="")
-                {
-                    objHistory.createHistoryForNote(Session.get('noteId'),Status.Update, nTit, nDet)
-                }
-                else
-                {
-                    objHistory.createHistoryForNote(response,Status.Insert, nTit, nDet)
-                }
-            }
-            $('#noteTitle')[0].value = "";
-            $('textarea#noteDetails').editable("setHTML", "", false);
->>>>>>> origin/master
-
 
         if(nTit == undefined || nTit == '' || nTit == null){
             alert("Note Title can not be empty");
