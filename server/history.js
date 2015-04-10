@@ -8,14 +8,12 @@ Meteor.publish('historyList', function(){
 
 Meteor.methods({
     'addHistory': function( noteId, historyData ){
-
         var history = historyList.find({NoteId: noteId});
 
         if(history.count()>0){
-            console.log(history.count());
-            history.fetch()[0].HistoryData.push(historyData);
-
-            historyList.update({_id: history.fetch()[0]._id}, {$set: {NoteId: noteId, HistoryData: history.fetch()[0].HistoryData} });
+            var hisData= history.fetch()[0].HistoryData;
+            hisData.push(historyData);
+            historyList.update(history.fetch()[0]._id, {$set: {NoteId: noteId, HistoryData: hisData} });
         }
         else
         {
@@ -30,6 +28,5 @@ Meteor.methods({
     }
 
 });
-
 
 

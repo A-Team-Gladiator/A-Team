@@ -11,17 +11,19 @@ Meteor.methods({
     'addNote': function( type, noteId, noteTitle, noteDetails ){
         var currentUserId = Meteor.userId();
         if(type == 'addNote') {
-            noteList.insert({
+          var ret =  noteList.insert({
                 NoteTitle: noteTitle,
                 NoteDetails: noteDetails,
                 CreatedBy: currentUserId,
                 CreatedDate: new Date(),
                 LastUpdated: new Date()
             });
+            return ret;
         }else{
             noteList.update(noteId, {$set: {
                 NoteTitle: noteTitle, NoteDetails: noteDetails, LastUpdated: new Date()}
             });
+
         }
     },
 

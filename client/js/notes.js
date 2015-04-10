@@ -10,6 +10,7 @@ Meteor.subscribe('noteList');
 Template.notes.events({
     'click .btnSaveNote': function () {
         var objHistory= new clsHistory();
+
         var nTit = $('#noteTitle')[0].value;
         var nDet = $('textarea#noteDetails').editable("getHTML", true, true); //$('#noteDetails')[0].value;
         Meteor.call('addNote', Session.get('noteMode'), Session.get('noteId'), nTit, nDet, function (error, response) {
@@ -17,13 +18,23 @@ Template.notes.events({
                 console.log('ERROR :', error);
             } else {
                 console.log('response:', response);
-
-                objHistory.createHistoryForNote(2,Status.Insert, nTit, nDet)
+                if(Session.get('noteId')!="")
+                {
+                    objHistory.createHistoryForNote(Session.get('noteId'),Status.Update, nTit, nDet)
+                }
+                else
+                {
+                    objHistory.createHistoryForNote(response,Status.Insert, nTit, nDet)
+                }
             }
             $('#noteTitle')[0].value = "";
             $('textarea#noteDetails').editable("setHTML", "", false);
+
             Session.set('noteMode','addNote');
             Session.set('noteId', '');
+
+            Session.set('oldTitle','');
+            Session.set('oldNoteDetails', '');
         });
     },
 

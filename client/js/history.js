@@ -1,6 +1,7 @@
 /**
  * Created by sumit on 4/9/2015.
  */
+Meteor.subscribe('historyList');
 Status = {
     Insert: "Inserted",
     Update: "Updated",
@@ -15,13 +16,14 @@ Status = {
 
 };
  clsHistory = function () {
-    historyDataId: null;
-    this.historyDetails = null;
-    this.changedby = "";
-    this.changedate = "";
-    this.status = "";
+     this.historyDataId= null;
+     this.historyDetails = null;
+     this.changedBy = "";
+     this.changedDate = "";
+     this.status = "";
+     this.type = "";
 }
-Meteor.subscribe('historyList');
+
 
 
 clsHistory.prototype.createHistoryForNote=function(noteId,status,title,noteDetails){
@@ -31,9 +33,9 @@ clsHistory.prototype.createHistoryForNote=function(noteId,status,title,noteDetai
         var randomNo = 1 + Math.floor(Math.random() * 6);
         var Id = 'history-' + randomNo + '-' + new Date().getTime();
 
-        objHistoryData.historyData=Id;
+        objHistoryData.historyDataId=Id;
         objHistoryData.changedBy = userId;
-        objHistoryData.ChangeDate = new Date();
+        objHistoryData.changedDate = new Date();
         objHistoryData.status = status;
         objHistoryData.type = Type.Note;
         objHistoryData.historyDetails={};
@@ -62,10 +64,13 @@ clsHistory.prototype.createHistoryForTag=function(noteId,tagId,status,tagName,de
         var randomNo = 1 + Math.floor(Math.random() * 6);
         var Id = 'history-' + randomNo + '-' + new Date().getTime();
 
-        objHistoryData.historyData=Id;
 
+
+
+
+        objHistoryData.historyDataId=Id;
         objHistoryData.changedBy = userId;
-        objHistoryData.ChangeDate = new Date();
+        objHistoryData.changedDate = new Date();
         objHistoryData.status = status;
         objHistoryData.type = Type.Tag;
         objHistoryData.historyDetails={};
@@ -93,10 +98,10 @@ clsHistory.prototype.createHistoryForShare=function(noteId,shareId,status,shareW
         var randomNo = 1 + Math.floor(Math.random() * 6);
         var Id = 'history-' + randomNo + '-' + new Date().getTime();
 
-        objHistoryData.historyData=Id;
+        objHistoryData.historyDataId=Id;
 
         objHistoryData.changedBy = userId;
-        objHistoryData.ChangeDate = new Date();
+        objHistoryData.changeDate = new Date();
         objHistoryData.status = status;
         objHistoryData.type = Type.Share;
         objHistoryData.historyDetails={};
@@ -120,9 +125,9 @@ clsHistory.prototype.createHistoryForGroup=function(status,groupId,groupName,gro
         var randomNo = 1 + Math.floor(Math.random() * 6);
         var Id = 'history-' + randomNo + '-' + new Date().getTime();
 
-        objHistoryData.historyData=Id;
+        objHistoryData.historyDataId=Id;
         objHistoryData.changedBy = userId;
-        objHistoryData.ChangeDate = new Date();
+        objHistoryData.changedDate = new Date();
         objHistoryData.status = status;
         objHistoryData.type = Type.Group;
         objHistoryData.historyDetails={};
@@ -144,4 +149,9 @@ clsHistory.prototype.createHistoryForGroup=function(status,groupId,groupName,gro
         }
 
     }
+
+clsHistory.prototype.getHistory= function () {
+    var noteId = Session.get('noteId');
+    return historyList.find({NoteId: noteId});
+}
 
