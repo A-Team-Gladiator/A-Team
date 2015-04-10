@@ -44,6 +44,7 @@ Template.centerList.events({
         $('textarea#noteDetails').editable("setHTML", note.NoteDetails, false);
         Session.set('noteMode','editNote');
         Session.set('noteId', noteId);
+
         Session.set('oldTitle', note.NoteTitle);
         Session.set('oldNoteDetails', note.NoteDetails);
 
