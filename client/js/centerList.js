@@ -29,6 +29,8 @@ Template.centerList.events({
                     console.log('ERROR :', error);
                 } else {
                     var objHistory= new clsHistory();
+
+                    //add History  for delete
                     objHistory.createHistoryForNote(noteId,Status.Delete, nTit)
                     console.log('response:', response);
                 }
@@ -44,6 +46,7 @@ Template.centerList.events({
         $('textarea#noteDetails').editable("setHTML", note.NoteDetails, false);
         Session.set('noteMode','editNote');
         Session.set('noteId', noteId);
+
         Session.set('oldTitle', note.NoteTitle);
         Session.set('oldNoteDetails', note.NoteDetails);
 
