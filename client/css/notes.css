@@ -53,10 +53,16 @@
 
 .spn { color:blue; font-weight:bold; }
 
-.btnSaveNote
-{
-    margin:10px;
+.btnSaveNote {
+    margin-top: -7px;
+    float: right;
 }
+
+.btnClearNote {
+    margin-top: -7px;
+    float: left;
+}
+
 
 .container-fluid,
 .row-fluid { height: inherit; }

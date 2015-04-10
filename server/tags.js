@@ -16,5 +16,9 @@ Meteor.methods({
             TagBy: currentUserId,
             TagDate: new Date()
         });
+    },
+
+    'removeTag': function (tagId) {
+        tagList.remove(tagId);
     }
 });

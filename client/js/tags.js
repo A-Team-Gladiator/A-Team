@@ -8,11 +8,6 @@ Template.tags.helpers({
     getTags: function () {
         var noteId = Session.get('noteId');
         return tagList.find({NoteId: noteId}, {sort: {TagName: 1}});
-    },
-
-    'CreatedDate': function () {
-        var me = this;
-        return me.CreatedDate.toDateString();
     }
 });
 
@@ -21,6 +16,38 @@ Template.tags.events({
         event.preventDefault();
         var tagName = event.target.tagName.value;
 
-        Meteor.call('addTag',tagName, Session.get('noteId'));
+        if(tagName == undefined || tagName == '' || tagName == null){
+          alert("Tag Name can not be empty");
+        } else {
+            if(tagName.trim().length==0){
+                alert("Tag Name can not be empty");
+            }else {
+                Meteor.call('addTag', tagName, Session.get('noteId'), function (error, response) {
+                    //if (error) {
+                    //    console.log('ERROR :', error);
+                    //} else {
+                    //    console.log('response:', response);
+                    //}
+                    $('#txtTag')[0].value = "";
+                });
+            }
+        }
+    },
+
+    'click .removeTag' : function(){
+        var tagId = this._id;
+
+        var tName = tagList.findOne(tagId).TagName;
+        var r = confirm("Are you sure you want delete \"" + tName + "\"");
+        if (r == true) {
+            //PlayersList.remove(selectedPlayer);
+            Meteor.call('removeTag', tagId, function (error, response) {
+                if (error) {
+                    console.log('ERROR :', error);
+                } else {
+                    console.log('response:', response);
+                }
+            });
+        }
     }
 });

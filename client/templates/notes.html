@@ -95,13 +95,10 @@
                 <br/>
 
 
-
-                {{> tags}}
-
-
-
-                <hr/>
-
+                {{#if isTagVisible}}
+                    {{> tags}}
+                {{/if}}
+                
                 <div class="jumbotron" style="overflow-y: auto;">
 
                 <div>
@@ -137,7 +134,8 @@
                 <br/>
 
                 <!--</div>-->
-                <a href="#" class="btn btn-sm btn-success btnSaveNote"><span class="glyphicon glyphicon-save"></span>Save</a>
+                <a href="#" class="btn btn-sm btn-success btnSaveNote"><span class="glyphicon glyphicon-floppy-disk"></span>Save</a>
+                <a href="#" class="btn btn-sm btn-warning btnClearNote btnCreateNote"><span class="glyphicon glyphicon-refresh"></span>Clear</a>
                 </div>
 
 

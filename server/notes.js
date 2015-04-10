@@ -29,10 +29,6 @@ Meteor.methods({
 
     'removeNote': function (noteId) {
         noteList.remove(noteId);
-    },
-
-    'modifyScore': function(selectedPlayer, score){
-        PlayersList.update(selectedPlayer, {$inc: {score: score} });
     }
 });
 
