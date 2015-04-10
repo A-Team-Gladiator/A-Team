@@ -43,7 +43,10 @@ td:nth-child(4)
 .row-fluid { height: inherit; }
 
 
-
+.borderTop
+{
+    border-top: 1px Solid lightgray;
+}
 
 
 

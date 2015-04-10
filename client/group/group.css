@@ -4,8 +4,8 @@
 
 .drpdwnLst
 {
-    max-height: 400px;
-    max-width:300px;
+    max-height: 600px;
+    max-width:600px;
     overflow-y: auto;
 }
 

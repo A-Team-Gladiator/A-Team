@@ -32,8 +32,9 @@
                             <tbody>
                                 {{#if getNotes.count}}
                                     {{#each getNotes}}
-                                        <tr>
+                                        <tr class="borderTop">
                                             <a href="#"><span class="glyphicon glyphicon-edit editNote" alt="Delete this Note" TITLE="Edit this Note"></span></a>
+                                            &nbsp;&nbsp; &nbsp;&nbsp;
                                             <a href="#"><span class="glyphicon glyphicon-tags editNote" alt="Add Tag" TITLE="Add Tag"></span></a>
 
                                             <td>{{NoteTitle}}</td>

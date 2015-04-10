@@ -1,10 +1,16 @@
 <template name="leftPanel">
 
+    <script>
+        $('#navigation li').click(function() {
+            $('#navigation li').removeClass('selected');
+            $(this).addClass('selected');
+        });
+    </script>
 
 
     <div class="leftSideBar">
 
-        <nav class="navbar navbar-inverse sidebar"  role="navigation">
+        <nav class="navbar navbar-primary sidebar"  role="navigation">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header navbar-primary heading">
@@ -23,7 +29,7 @@
                 <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
                     <ul class="nav navbar-nav">
 
-                        <li class="active"><a href="#">My Notes<span class="pull-right hidden-xs showopacity glyphicon glyphicon-edit leftSideBarMenuItem"></span></a></li>
+                        <li class="selected"><a href="{{pathFor 'NoteList'}}">My Notes<span class="pull-right hidden-xs showopacity glyphicon glyphicon-edit leftSideBarMenuItem"></span></a></li>
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shared With Me <span class="pull-right hidden-xs showopacity glyphicon glyphicon-share-alt leftSideBarMenuItem"></span></a>
@@ -34,9 +40,9 @@
                             <!--</ul>-->
                         </li>
                         <li ><a href="#">Tags<span class="pull-right hidden-xs showopacity glyphicon glyphicon-tags leftSideBarMenuItem"></span></a></li>
-                        <li ><a href="#">Groups<span class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list leftSideBarMenuItem"></span></a></li>
-                        <li><a href="#">Contact Us<span class="pull-right hidden-xs showopacity glyphicon glyphicon-road leftSideBarMenuItem"></span></a></li>
-                        <li ><a href="#">About Us<span class="pull-right hidden-xs showopacity glyphicon glyphicon-user leftSideBarMenuItem"></span></a></li>
+                        <li ><a href="{{pathFor 'group'}}">Groups<span class="pull-right hidden-xs showopacity glyphicon glyphicon-th-list leftSideBarMenuItem"></span></a></li>
+                        <li><a href="{{pathFor 'contactUs'}}">Contact Us<span class="pull-right hidden-xs showopacity glyphicon glyphicon-road leftSideBarMenuItem"></span></a></li>
+                        <li ><a href="{{pathFor 'aboutUs'}}">About Us<span class="pull-right hidden-xs showopacity glyphicon glyphicon-user leftSideBarMenuItem"></span></a></li>
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gladiators <span class="caret"></span><span class="pull-right hidden-xs showopacity glyphicon glyphicon-tree-deciduous leftSideBarMenuItem"></span></a>
@@ -51,7 +57,7 @@
 
                             </ul>
                         </li>
-                        <li ><a href="#">Help<span class="pull-right hidden-xs showopacity glyphicon glyphicon-info-sign leftSideBarMenuItem"></span></a></li>
+                        <li ><a href="{{pathFor 'help'}}">Help<span class="pull-right hidden-xs showopacity glyphicon glyphicon-info-sign leftSideBarMenuItem"></span></a></li>
                     </ul>
                 </div>
             </div>
