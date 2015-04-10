@@ -2,9 +2,40 @@
  * Created by SOHEB.RAPATI on 08-04-2015.
  */
 
-Meteor.publish('noteList', function(){
+Meteor.publish('noteList', function(strParam){
+
+
     var currentUserId = this.userId;
-    return noteList.find({CreatedBy: currentUserId});
+    if(strParam!=undefined)
+    {
+        var strToSearch=strParam.split('@@@')[0];
+        var type=strParam.split('@@@')[1];
+
+        if(type=="Tag")
+        {
+            var arrId=[];
+            tagList.find({ "TagName" :{ $regex:strToSearch} }).fetch().forEach(function(doc) {arrId.push(doc.NoteId)});
+           return noteList.find({ _id : { $in : arrId },CreatedBy: currentUserId });
+        }
+        else if(type=="Note")
+        {
+            if(noteList.find({"NoteTitle": { $regex:strToSearch},CreatedBy: currentUserId}).count()>0)
+           return noteList.find({"NoteTitle": { $regex:strToSearch},CreatedBy: currentUserId});
+            else
+            return null;
+            //return noteList.find({CreatedBy: currentUserId});
+        }
+        else
+        {
+            return noteList.find({CreatedBy: currentUserId});
+        }
+    }
+    else
+    {
+        return noteList.find({CreatedBy: currentUserId});
+    }
+
+
 });
 
 Meteor.methods({

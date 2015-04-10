@@ -5,7 +5,9 @@
 Session.setDefault('noteMode','addNote');
 Session.setDefault('noteId', '');
 
-Meteor.subscribe('noteList');
+
+
+noteSubscription=Meteor.subscribe('noteList');
 
 
 Template.notes.helpers({

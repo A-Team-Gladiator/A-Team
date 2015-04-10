@@ -52,5 +52,26 @@ Template.centerList.events({
 
         $('textarea#noteDetails').editable("focus");
         $('#noteTitle').focus();
+    },
+    'click .searchNote':function(){
+        var strToSearch=$("#txtSearch")[0].value;
+        var strParam="";
+
+        if(strToSearch!="")
+        {
+            if($("#cmbSearch")[0].value=="By Tag")
+            {
+                strParam= strToSearch +"@@@"+"Tag";
+            }
+            else if($("#cmbSearch")[0].value=="By Notes")
+            {
+                strParam=strToSearch +"@@@"+"Note";
+            }
+        }
+        if (noteSubscription != null) {
+            noteSubscription.stop();
+        }
+        noteSubscription=  Meteor.subscribe('noteList',strParam);
+
     }
 });
