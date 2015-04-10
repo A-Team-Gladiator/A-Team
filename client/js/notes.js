@@ -26,7 +26,6 @@ Template.notes.events({
         var nDet = $('textarea#noteDetails').editable("getHTML", true, true); //$('#noteDetails')[0].value;
 
 
-
         if(nTit == undefined || nTit == '' || nTit == null){
             alert("Note Title can not be empty");
         } else {
