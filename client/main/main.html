@@ -1,5 +1,7 @@
 <head>
 
+
+
     <title>Note App</title>
 
 </head>
@@ -22,11 +24,10 @@
             <li><a href="#"><span class="teamName">by Gladiators!</span></a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          {{> loginButtons}}  <!--here -->
+            {{> loginButtons}}  <!--here -->
         </ul>
     </div>
 </div>
-
 
 {{#if currentUser}}
     <div class="container-fluid">
@@ -40,12 +41,11 @@
     </div>
 {{else}}
     <div class="row sidebarMargin ">
-      <div class="col-sm-12">{{>imageSlider}}</div>
+        <div class="col-sm-12">{{>imageSlider}}</div>
     </div>
 {{/if}}
 
 </body>
-
 
 <template name="createNewNote">
     <footer id="footer" class="animated navbar navbar-fixed-bottom createButtonFooter">
@@ -60,10 +60,7 @@
 
 <template name="NoteList">
 
-        <div class="col-sm-5">{{> centerList}}</div>
-        <div class="col-sm-5">{{> notes}}</div>
+    <div class="col-sm-5">{{> centerList}}</div>
+    <div class="col-sm-5">{{> notes}}</div>
 
 </template>
-
-
-
