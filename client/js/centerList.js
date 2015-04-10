@@ -52,22 +52,5 @@ Template.centerList.events({
 
         $('textarea#noteDetails').editable("focus");
         $('#noteTitle').focus();
-    },
-    'click .searchNote':function(){
-        var strToSearch=$("#txtSearch")[0].value;
-
-        if($("#cmbSearch")[0].value=="By Tag")
-        {
-            var arrId=[];
-            tagList.find({ "TagName" :{ $regex:strToSearch} }).fetch().forEach(function(doc) {arrId.push(doc.NoteId)});
-            var list=  noteList.find({ _id : { $in : arrId } }).fetch();
-        }
-        else if($("#cmbSearch")[0].value=="By Notes")
-        {
-         var list=   noteList.find({"NoteTitle": { $regex:strToSearch}}).fetch();
-        }
-
-
-
     }
 });
